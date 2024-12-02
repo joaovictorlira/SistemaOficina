@@ -1,25 +1,34 @@
 import java.util.Date;
 import src.models.*;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
 
     public static void main(String[] args) {
 
         Servico servico1 = new Servico(new Date(), "500", TipoServiço.BASICO);
-
+        
 
         Mecanico mecanico1 = new Mecanico("Caio Souto", "4002-8922", "026.321.467-46", "2000");
         Borracheiro borracheiro1 = new Borracheiro("Yuri", "4002-8926", "238.345.453-45", "1500");
         Cliente cliente1 = new Cliente("João Victor","4002-8211","092.152.754-44");
+        Cliente cliente2 = new Cliente("Manoel Gomes", "4002-9999", "127.522.334-43");
+        Cliente cliente3 = new Cliente("Gabriel", "4002-9484", "129.772.331-93");
         Veiculo veiculo1 = new Veiculo("ABC-8721","Aventador","Lamborghini");
         NotaFiscal notaFiscal = new NotaFiscal(cliente1, veiculo1, servico1);
 
 
+        ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+
+        clientes.add(cliente1);
+        clientes.add(cliente2);
+        clientes.add(cliente3);
+
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Digite 0 para Cliente e 1 para Funcionário");
-        int escolha = sc.nextInt(); // Solicita a escolha inicial
+        int escolha = sc.nextInt();
 
         switch (escolha) {
 
@@ -79,7 +88,7 @@ public class Main {
 
                 switch (funcEscolha) {
                     case 0:
-                        System.out.println("Digite 0 se você quer trocar óleo ou 1 se você quer trocar peças");
+                        System.out.println("Digite 0 se você quer trocar óleo , 1 se você quer trocar peças e 2 para a quantidade de clientes");
 
                         int escolhamecanico = sc.nextInt();
 
@@ -91,6 +100,9 @@ public class Main {
 
                             case 1:
                                 System.out.println("Você trocou as peças do cliente!");
+                                break;
+                            case 2:
+                                System.out.println("Você tem " + "" + clientes.size() + " clientes na fila!");
                                 break;
 
                         }
