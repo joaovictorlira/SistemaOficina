@@ -1,30 +1,19 @@
 import java.util.Date;
-<<<<<<< HEAD
-
-import src.models.Servico;
-import src.models.TipoServiço;
-=======
 import src.models.*;
 import java.util.Scanner;
->>>>>>> 91e78b2 (segundaversao)
 
 public class Main {
 
     public static void main(String[] args) {
-<<<<<<< HEAD
-        
 
         Servico servico1 = new Servico(new Date(), "500", TipoServiço.BASICO);
 
-
-        System.out.println(servico1);
-=======
-
-        Servico servico1 = new Servico(new Date(), "500", TipoServiço.BASICO);
-        System.out.println("Serviço criado: " + servico1);
 
         Mecanico mecanico1 = new Mecanico("Caio Souto", "4002-8922", "026.321.467-46", "2000");
         Borracheiro borracheiro1 = new Borracheiro("Yuri", "4002-8926", "238.345.453-45", "1500");
+        Cliente cliente1 = new Cliente("João Victor","4002-8211","092.152.754-44");
+        Veiculo veiculo1 = new Veiculo("ABC-8721","Aventador","Lamborghini");
+        NotaFiscal notaFiscal = new NotaFiscal(cliente1, veiculo1, servico1);
 
 
         Scanner sc = new Scanner(System.in);
@@ -41,6 +30,8 @@ public class Main {
                 switch (clienteescolha) {
                     case 0:
                         System.out.println("Exibindo a nota fiscal");
+                        System.out.println(notaFiscal.notafiscal());
+
                         break;
 
                     case 1:
@@ -111,21 +102,16 @@ public class Main {
                         switch (escolhaborracheiro){
 
                             case 0:
-                                System.out.println("Você trocou o pneu do cliente");
+                                System.out.println("Você trocou o pneu do cliente!");
                                 break;
 
                             case 1:
-                                System.out.println("Você remendou um furo no pneu do cliente");
+                                System.out.println("Você remendou um furo no pneu do cliente!");
                         }
->>>>>>> 91e78b2 (segundaversao)
 
 
 
 
-<<<<<<< HEAD
-    }
-}
-=======
                         break;
 
                     default:
@@ -139,7 +125,6 @@ public class Main {
                 break;
         }
 
-        sc.close(); // Fecha o scanner para evitar vazamentos de recursos
+        sc.close();
     }
 }
->>>>>>> 91e78b2 (segundaversao)
