@@ -5,9 +5,26 @@ import java.util.Date;
 
 
 public class Servico {
-    
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
     Date data;
     String orcamento;
+
+    public String getOrcamento() {
+        return orcamento;
+    }
+
+    public void setOrcamento(String orcamento) {
+        this.orcamento = orcamento;
+    }
+
     TipoServiço tipoServiço;
     
     public Servico(Date data, String orcamento, TipoServiço tipoServiço) {
@@ -23,12 +40,10 @@ public class Servico {
 
         
         return String.format(
-            "Servico:\n" +
             "-------------------------------\n" +
             "Data: %s\n" +
             "Orçamento: R$ %s\n" +
-            "Tipo de Serviço: %s\n" +
-            "-------------------------------",
+            "Tipo de Serviço: %s",
             dataFormatada, orcamento, tipoServiço
         );
     }
