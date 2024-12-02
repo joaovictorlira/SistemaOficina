@@ -27,4 +27,6 @@ public class Mecanico extends Pessoa implements Imecanico {
     public void trocarpecas() {
         System.out.println(nome + " Trocou as peças com sucesso!");
     }
+
+  
 }
